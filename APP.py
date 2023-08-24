@@ -15,13 +15,13 @@ def main():
         st.image(image="msg-1807142568-38.jpg")
         st.write("It is important that credit card companies are able to recognize fraudulent credit card transactions so that customers are not charged for items that they did not purchase.")
         st.write("In this project we have used a dataset of transactions made by credit cards in September 2013 by European cardholders\n \
-            We have employed 4 different techniques to enable us predict fraudulent transactions.\n \
+            We have employed 2 different techniques to enable us predict fraudulent transactions.\n \
                 Because the dataset is mostly made up of features that have been transformed because of confidentiality,\n \
                 in this demo we would perform some predictions on random samples from the same dataset.")
         st.write("So go ahead and select a model to get started")
 
     # Dataset
-    dataset = pd.read_csv("creditcard.csv")
+    dataset = pd.read_csv("dataset.csv")
     dataset.drop(['Unnamed: 0'], axis=1, inplace=True)
 
     def choose(modelname="",file=""):
