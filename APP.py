@@ -94,7 +94,7 @@ def main():
                 
                 st.write("Row"+str(i+1)+":  ", "Our model predicted a {}, and it is a {}. {}".format(predicted, actual, show))
 
-    menu = ["<Select One>","Isolation Forest", "Local Outlier Factor", "COPOD", "Autoencoder"]  
+    menu = ["<Select One>","Isolation Forest", "Local Outlier Factor", "None"]  
     choice = st.sidebar.selectbox("Select a Model",menu)
     
     if choice == "<Select One>":
@@ -103,9 +103,7 @@ def main():
         choose(modelname="Isolation Forest",file="ISF.pkl")
     if choice == "Local Outlier Factor":    
         choose(modelname="Local Outlier Factor",file="LOF.pkl")
-    if choice == "COPOD":    
-        choose(modelname="Copula-Based Outlier Detection (COPOD)",file="COPOD.pkl")
-    if choice == "Autoencoder":
+    if choice == "None":
         header.empty()
         st.empty()   
         st.subheader("Deep Autoencoder")
