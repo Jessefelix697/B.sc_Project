@@ -71,7 +71,7 @@ def main():
             for i, value in enumerate(predicted):
                 predicted = ""
                 actual = ""
-                if modelname == "Copula-Based Outlier Detection (COPOD)":
+                if modelname == "None":
                     if value == 0:
                         predicted = "Genuine"
                     elif value == 1:
@@ -106,7 +106,7 @@ def main():
     if choice == "None":
         header.empty()
         st.empty()   
-        st.subheader("Deep Autoencoder")
+        st.subheader("None")
         
         number = st.number_input(label="How many predictions would you like to see?",value=0,min_value=0, max_value=10)
         predict_type = st.radio("How would you want data to be selected?",
