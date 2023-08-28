@@ -94,7 +94,7 @@ def main():
                 
                 st.write("Row"+str(i+1)+":  ", "Our model predicted a {}, and it is a {}. {}".format(predicted, actual, show))
 
-    menu = ["<Select One>","Isolation Forest", "Local Outlier Factor", "None"]  
+    menu = ["<Select One>","Isolation Forest", "Local Outlier Factor", "Ensemble"]  
     choice = st.sidebar.selectbox("Select a Model",menu)
     
     if choice == "<Select One>":
@@ -103,7 +103,7 @@ def main():
         choose(modelname="Isolation Forest",file="ISF.pkl")
     if choice == "Local Outlier Factor":    
         choose(modelname="Local Outlier Factor",file="LOF.pkl")
-    if choice == "None":
+    if choice == "Ensemble":
         header.empty()
         st.empty()   
         st.subheader("None")
@@ -140,7 +140,7 @@ def main():
                 st.dataframe(data)
 
             # For prediction
-            autoencoder = load_model('model.h5')
+            Ensemble = load_model('model.h5')
             X = data.drop(['Class'], axis=1)
             y = data['Class']
             predicted = autoencoder.predict(X)
